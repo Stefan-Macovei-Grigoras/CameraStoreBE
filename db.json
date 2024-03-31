@@ -1,0 +1,22 @@
+{
+  "cameras": [
+    {
+      "name": "Sony Alpha a6000",
+      "price": "650",
+      "description": "A compact mirrorless camera with fast autofocus and high-resolution images.",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Canon EOS 5D Mark IV",
+      "price": 2000,
+      "description": "A professional-grade DSLR camera with exceptional image quality and advanced features."
+    },
+    {
+      "name": "test",
+      "price": 3,
+      "description": "test",
+      "id": "3"
+    }
+  ]
+}
