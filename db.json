@@ -1,22 +1,304 @@
 {
   "cameras": [
     {
-      "name": "Sony Alpha a6000",
-      "price": "600",
-      "description": "A compact mirrorless camera with fast autofocus and high-resolution images.",
-      "id": "1"
-    },
-    {
       "id": "2",
       "name": "Canon EOS 5D Mark IV",
       "price": 2000,
       "description": "A professional-grade DSLR camera with exceptional image quality and advanced features."
     },
     {
-      "name": "test",
+      "id": "3",
+      "name": "Test",
       "price": 3,
-      "description": "test",
-      "id": "3"
+      "description": "Test"
+    },
+    {
+      "id": "5af0",
+      "name": "Test",
+      "price": "1",
+      "description": "Test"
+    },
+    {
+      "id": "c929",
+      "name": "Test",
+      "price": "1",
+      "description": "Test"
+    },
+    {
+      "id": "49d7",
+      "name": "Test",
+      "price": "1",
+      "description": "Test"
+    },
+    {
+      "id": "6",
+      "name": "Nikon D850",
+      "price": 3299,
+      "description": "A high-resolution full-frame DSLR camera suitable for professional photography."
+    },
+    {
+      "id": "7",
+      "name": "Sony Alpha a7 III",
+      "price": 1999,
+      "description": "A versatile full-frame mirrorless camera with excellent image quality and fast autofocus."
+    },
+    {
+      "id": "8",
+      "name": "Canon EOS Rebel T7",
+      "price": 399,
+      "description": "An entry-level DSLR camera with basic features for beginners."
+    },
+    {
+      "id": "9",
+      "name": "Fujifilm X-T3",
+      "price": 1399,
+      "description": "A mirrorless camera with a retro design and advanced features for enthusiasts."
+    },
+    {
+      "id": "10",
+      "name": "Nikon Z6",
+      "price": 1996,
+      "description": "A full-frame mirrorless camera with a high-resolution sensor and 4K video capabilities."
+    },
+    {
+      "id": "11",
+      "name": "Sony Cyber-shot DSC-RX100 VII",
+      "price": 1298,
+      "description": "A compact camera with a large sensor and advanced autofocus system."
+    },
+    {
+      "id": "12",
+      "name": "Panasonic Lumix GH5",
+      "price": 1497,
+      "description": "A hybrid mirrorless camera with 4K video recording and advanced video features."
+    },
+    {
+      "id": "13",
+      "name": "Canon PowerShot G7 X Mark III",
+      "price": 749,
+      "description": "A compact camera with a flip-up screen and fast autofocus for vlogging."
+    },
+    {
+      "id": "14",
+      "name": "Nikon D3500",
+      "price": 399,
+      "description": "An entry-level DSLR camera with a compact design and easy-to-use interface."
+    },
+    {
+      "id": "15",
+      "name": "Sony Alpha a6600",
+      "price": 1398,
+      "description": "An APS-C mirrorless camera with in-body image stabilization and fast autofocus."
+    },
+    {
+      "id": "16",
+      "name": "Canon EOS R5",
+      "price": 3899,
+      "description": "A full-frame mirrorless camera with 8K video recording and advanced autofocus."
+    },
+    {
+      "id": "17",
+      "name": "Sony Cyber-shot DSC-RX100 VA",
+      "price": 948,
+      "description": "A compact camera with a large sensor and fast burst shooting."
+    },
+    {
+      "id": "18",
+      "name": "Fujifilm X100V",
+      "price": 1399,
+      "description": "A premium compact camera with a classic design and advanced features."
+    },
+    {
+      "id": "19",
+      "name": "Canon EOS 90D",
+      "price": 1199,
+      "description": "A versatile DSLR camera with fast autofocus and high-speed continuous shooting."
+    },
+    {
+      "id": "20",
+      "name": "Nikon D780",
+      "price": 2296,
+      "description": "A full-frame DSLR camera with advanced features for both photo and video."
+    },
+    {
+      "id": "21",
+      "name": "Sony Alpha a6400",
+      "price": 898,
+      "description": "An APS-C mirrorless camera with a compact design and advanced autofocus."
+    },
+    {
+      "id": "22",
+      "name": "Canon EOS M50 Mark II",
+      "price": 599,
+      "description": "An entry-level mirrorless camera with a flip-out screen and eye detection autofocus."
+    },
+    {
+      "id": "23",
+      "name": "Nikon D7500",
+      "price": 996,
+      "description": "A mid-range DSLR camera with a tilting touchscreen and 4K video capabilities."
+    },
+    {
+      "id": "24",
+      "name": "Sony Cyber-shot DSC-RX100 VI",
+      "price": 1098,
+      "description": "A compact camera with a long zoom lens and high-speed autofocus."
+    },
+    {
+      "id": "25",
+      "name": "Fujifilm X-S10",
+      "price": 999,
+      "description": "A compact mirrorless camera with in-body image stabilization and advanced features."
+    },
+    {
+      "id": "26",
+      "name": "Canon PowerShot SX740 HS",
+      "price": 399,
+      "description": "A compact camera with a powerful zoom lens and 4K video recording."
+    },
+    {
+      "id": "27",
+      "name": "Nikon Z5",
+      "price": 1396,
+      "description": "A full-frame mirrorless camera with a compact and lightweight design."
+    },
+    {
+      "id": "28",
+      "name": "Sony Cyber-shot DSC-W800",
+      "price": 98,
+      "description": "A budget-friendly compact camera with easy-to-use features."
+    },
+    {
+      "id": "29",
+      "name": "Canon EOS 6D Mark II",
+      "price": 1399,
+      "description": "A full-frame DSLR camera with a vari-angle touchscreen and built-in Wi-Fi."
+    },
+    {
+      "id": "30",
+      "name": "Nikon Z50",
+      "price": 856,
+      "description": "An APS-C mirrorless camera with a compact design and user-friendly interface."
+    },
+    {
+      "id": "31",
+      "name": "Sony Alpha a6100",
+      "price": 748,
+      "description": "An entry-level mirrorless camera with fast autofocus and 4K video recording."
+    },
+    {
+      "id": "32",
+      "name": "Canon PowerShot G9 X Mark II",
+      "price": 429,
+      "description": "A pocketable compact camera with a 1-inch sensor and fast autofocus."
+    },
+    {
+      "id": "33",
+      "name": "Nikon COOLPIX P1000",
+      "price": 999,
+      "description": "A superzoom camera with a 125x optical zoom lens and 4K video recording."
+    },
+    {
+      "id": "34",
+      "name": "Sony Cyber-shot DSC-HX99",
+      "price": 448,
+      "description": "A compact camera with a versatile zoom range and 4K video capabilities."
+    },
+    {
+      "id": "35",
+      "name": "Canon EOS-1D X Mark III",
+      "price": 6499,
+      "description": "A flagship DSLR camera with professional-grade features for sports and wildlife photography."
+    },
+    {
+      "id": "36",
+      "name": "Nikon D5600",
+      "price": 596,
+      "description": "An entry-level DSLR camera with a vari-angle touchscreen and built-in Wi-Fi."
+    },
+    {
+      "id": "37",
+      "name": "Sony Cyber-shot DSC-RX10 IV",
+      "price": 1698,
+      "description": "A high-end compact camera with a versatile zoom lens and advanced features."
+    },
+    {
+      "id": "38",
+      "name": "Canon PowerShot G5 X Mark II",
+      "price": 899,
+      "description": "A premium compact camera with a 1-inch sensor and tilting touchscreen."
+    },
+    {
+      "id": "39",
+      "name": "Nikon COOLPIX B600",
+      "price": 299,
+      "description": "A compact camera with a powerful zoom lens and easy-to-use features."
+    },
+    {
+      "id": "40",
+      "name": "Sony Cyber-shot DSC-WX350",
+      "price": 268,
+      "description": "A compact camera with a 20x optical zoom lens and built-in Wi-Fi."
+    },
+    {
+      "id": "41",
+      "name": "Canon EOS 77D",
+      "price": 799,
+      "description": "A mid-range DSLR camera with a vari-angle touchscreen and Dual Pixel CMOS AF."
+    },
+    {
+      "id": "42",
+      "name": "Nikon D500",
+      "price": 1496,
+      "description": "A professional-grade DSLR camera with advanced features for wildlife and sports photography."
+    },
+    {
+      "id": "43",
+      "name": "Sony Alpha a7R IV",
+      "price": 3498,
+      "description": "A high-resolution full-frame mirrorless camera with advanced image stabilization."
+    },
+    {
+      "id": "44",
+      "name": "Canon PowerShot G1 X Mark III",
+      "price": 999,
+      "description": "A premium compact camera with a large APS-C sensor and weather-sealed body."
+    },
+    {
+      "id": "45",
+      "name": "Nikon D750",
+      "price": 1796,
+      "description": "A full-frame DSLR camera with a tilting touchscreen and built-in Wi-Fi."
+    },
+    {
+      "id": "46",
+      "name": "Sony Cyber-shot DSC-W830",
+      "price": 158,
+      "description": "A budget-friendly compact camera with a 20.1 MP sensor and 8x optical zoom."
+    },
+    {
+      "id": "47",
+      "name": "Canon EOS Rebel T8i",
+      "price": 799,
+      "description": "An entry-level DSLR camera with advanced features for creative photography."
+    },
+    {
+      "id": "48",
+      "name": "Nikon D3400",
+      "price": 446,
+      "description": "An entry-level DSLR camera with a compact and lightweight design."
+    },
+    {
+      "id": "49",
+      "name": "Sony Cyber-shot DSC-WX500",
+      "price": 348,
+      "description": "A compact camera with a 30x optical zoom lens and built-in Wi-Fi."
+    },
+    {
+      "id": "50",
+      "name": "Canon EOS M6 Mark II",
+      "price": 849,
+      "description": "An APS-C mirrorless camera with fast autofocus and 4K video capabilities."
     }
   ]
 }
