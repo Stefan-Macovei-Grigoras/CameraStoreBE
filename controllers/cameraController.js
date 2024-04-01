@@ -1,6 +1,17 @@
 // controllers/cameraController.js
 
 const axios = require('axios');
+const { v4: uuidv4 } = require('uuid'); // Importa functia uuidv4 pentru generarea de ID-uri unice
+const faker = require('faker'); // Importa biblioteca faker pentru generarea de date aleatorii
+
+// Functia pentru generarea de entitati noi
+const generateNewEntity = () => {
+    return {
+        name: faker.random.words(),
+        price: faker.random.number({ min: 100, max: 5000 }),
+        description: faker.lorem.sentence()
+    };
+};
 
 const getAllCameras = async (req, res) => {
     try {
@@ -27,19 +38,17 @@ const getCameraById = async (req, res) => {
     }
 };
 
-const { v4: uuidv4 } = require('uuid');
-
 const createCamera = async (req, res) => {
     const { name, price, description } = req.body;
     // Validate request data
     if (!name || !price || !description) {
         return res.status(400).json({ error: 'Name, price, and description are required' });
     }
-    if(!isNaN(price) || price < 0){
-        return res.status(400).json({ error: 'Price is not valid(negative or not a number)' });
+    if (isNaN(price) || price < 0) {
+        return res.status(400).json({ error: 'Price is not valid (negative or not a number)' });
     }
-    if(description.length < 5){
-        return res.status(400).json({ error: 'Description is not valid(less than 5 characters)' });
+    if (description.length < 5) {
+        return res.status(400).json({ error: 'Description is not valid (less than 5 characters)' });
     }
     try {
         const id = uuidv4(); // Generate a unique ID
@@ -58,11 +67,11 @@ const updateCamera = async (req, res) => {
     if (!name && !price && !description) {
         return res.status(400).json({ error: 'At least one field (name, price, description) is required for update' });
     }
-    if(!isNaN(price) || price < 0){
-        return res.status(400).json({ error: 'Price is not valid(negative or not a number)' });
+    if (isNaN(price) || price < 0) {
+        return res.status(400).json({ error: 'Price is not valid (negative or not a number)' });
     }
-    if(description.length < 5){
-        return res.status(400).json({ error: 'Description is not valid(less than 5 characters)' });
+    if (description.length < 5) {
+        return res.status(400).json({ error: 'Description is not valid (less than 5 characters)' });
     }
     try {
         const response = await axios.put(`http://localhost:4000/cameras/${id}`, { name, price, description });
@@ -97,7 +106,6 @@ module.exports = {
     getCameraById,
     createCamera,
     updateCamera,
-    deleteCamera
-    
+    deleteCamera,
+    generateNewEntity // Exporta functia de generare a entitatilor noi
 };
-
