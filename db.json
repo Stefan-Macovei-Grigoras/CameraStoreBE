@@ -1,18 +1,6 @@
 {
   "cameras": [
     {
-      "id": "2",
-      "name": "Canon EOS 5D Mark IV",
-      "price": 2000,
-      "description": "A professional-grade DSLR camera with exceptional image quality and advanced features."
-    },
-    {
-      "id": "6",
-      "name": "Nikon D850",
-      "price": 3299,
-      "description": "A high-resolution full-frame DSLR camera suitable for professional photography."
-    },
-    {
       "id": "7",
       "name": "Sony Alpha a7 III",
       "price": 1999,

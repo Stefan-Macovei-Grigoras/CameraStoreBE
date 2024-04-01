@@ -35,6 +35,12 @@ const createCamera = async (req, res) => {
     if (!name || !price || !description) {
         return res.status(400).json({ error: 'Name, price, and description are required' });
     }
+    if(!isNaN(price) || price < 0){
+        return res.status(400).json({ error: 'Price is not valid(negative or not a number)' });
+    }
+    if(description.length < 5){
+        return res.status(400).json({ error: 'Description is not valid(less than 5 characters)' });
+    }
     try {
         const id = uuidv4(); // Generate a unique ID
         const response = await axios.post('http://localhost:4000/cameras', { id, name, price, description });
@@ -51,6 +57,12 @@ const updateCamera = async (req, res) => {
     // Validate request data
     if (!name && !price && !description) {
         return res.status(400).json({ error: 'At least one field (name, price, description) is required for update' });
+    }
+    if(!isNaN(price) || price < 0){
+        return res.status(400).json({ error: 'Price is not valid(negative or not a number)' });
+    }
+    if(description.length < 5){
+        return res.status(400).json({ error: 'Description is not valid(less than 5 characters)' });
     }
     try {
         const response = await axios.put(`http://localhost:4000/cameras/${id}`, { name, price, description });
