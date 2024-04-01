@@ -34,7 +34,7 @@ const generateNewEntity = () => {
 };
 
 // Intervalul in secunde intre adaugarea de entitati noi
-const intervalSeconds = 30; // Schimba acest numar conform necesitatilor tale
+const intervalSeconds = 60; // Schimba acest numar conform necesitatilor tale
 
 // Programarea adaugarii de entitati noi la intervale regulate
 setInterval(() => {
