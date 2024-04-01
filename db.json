@@ -7,30 +7,6 @@
       "description": "A professional-grade DSLR camera with exceptional image quality and advanced features."
     },
     {
-      "id": "3",
-      "name": "Test",
-      "price": 3,
-      "description": "Test"
-    },
-    {
-      "id": "5af0",
-      "name": "Test",
-      "price": "1",
-      "description": "Test"
-    },
-    {
-      "id": "c929",
-      "name": "Test",
-      "price": "1",
-      "description": "Test"
-    },
-    {
-      "id": "49d7",
-      "name": "Test",
-      "price": "1",
-      "description": "Test"
-    },
-    {
       "id": "6",
       "name": "Nikon D850",
       "price": 3299,
@@ -295,10 +271,16 @@
       "description": "A compact camera with a 30x optical zoom lens and built-in Wi-Fi."
     },
     {
-      "id": "50",
-      "name": "Canon EOS M6 Mark II",
-      "price": 849,
-      "description": "An APS-C mirrorless camera with fast autofocus and 4K video capabilities."
+      "id": "4492",
+      "name": "Test1",
+      "price": "1",
+      "description": "Test1"
+    },
+    {
+      "id": "a3ae2b1d-6357-4997-897e-ca55f47f323f",
+      "name": "Test2",
+      "price": "2",
+      "description": "Test2"
     }
   ]
 }

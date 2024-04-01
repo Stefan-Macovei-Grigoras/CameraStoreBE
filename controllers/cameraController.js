@@ -27,6 +27,8 @@ const getCameraById = async (req, res) => {
     }
 };
 
+const { v4: uuidv4 } = require('uuid');
+
 const createCamera = async (req, res) => {
     const { name, price, description } = req.body;
     // Validate request data
@@ -34,7 +36,8 @@ const createCamera = async (req, res) => {
         return res.status(400).json({ error: 'Name, price, and description are required' });
     }
     try {
-        const response = await axios.post('http://localhost:4000/cameras', { name, price, description });
+        const id = uuidv4(); // Generate a unique ID
+        const response = await axios.post('http://localhost:4000/cameras', { id, name, price, description });
         res.status(201).json(response.data);
     } catch (error) {
         console.error('Error creating camera:', error);
