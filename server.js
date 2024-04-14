@@ -2,44 +2,43 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Import cors middleware
+const cors = require('cors'); 
 const cameraRoutes = require('./routes/cameraRoutes');
+const reviewRoutes = require('./routes/reviewRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(cors()); // Enable CORS for all routes so frontedn ca get the data
+app.use(cors());
+
 const { v4: uuidv4 } = require('uuid');
 const faker = require('faker');
 const axios = require('axios');
 
 
-// Routes
 app.use('/cameras', cameraRoutes);
+app.use('/reviews', reviewRoutes);
 
-// Start server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-// Functia pentru generarea de entitati noi
-const generateNewEntity = () => {
+const generateNewCamera = () => {
     return {
-        id: uuidv4(), // Generare ID unic
+        id: uuidv4(), 
         name: faker.random.words(),
         price: faker.random.number({ min: 100, max: 5000 }),
         description: faker.lorem.sentence()
     };
 };
 
-// Intervalul in secunde intre adaugarea de entitati noi
-const intervalSeconds = 60; // Schimba acest numar conform necesitatilor tale
 
-// Programarea adaugarii de entitati noi la intervale regulate
+const intervalSeconds = 6000;
+
 setInterval(() => {
-    const newEntity = generateNewEntity();
-    axios.post(`http://localhost:${PORT}/cameras`, newEntity)
+    const Camera = generateNewCamera();
+    axios.post(`http://localhost:${PORT}/cameras`, Camera)
         .then(response => {
             console.log('New entity added:', response.data);
         })

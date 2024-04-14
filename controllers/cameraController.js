@@ -1,17 +1,19 @@
 // controllers/cameraController.js
 
 const axios = require('axios');
-const { v4: uuidv4 } = require('uuid'); // Importa functia uuidv4 pentru generarea de ID-uri unice
-const faker = require('faker'); // Importa biblioteca faker pentru generarea de date aleatorii
+const { v4: uuidv4 } = require('uuid'); 
+const faker = require('faker'); 
+const data = require('../data.json');
 
-// Functia pentru generarea de entitati noi
-const generateNewEntity = () => {
-    return {
-        name: faker.random.words(),
-        price: faker.random.number({ min: 100, max: 5000 }),
-        description: faker.lorem.sentence()
-    };
-};
+
+
+// const generateNewEntity = () => {
+//     return {
+//         name: faker.random.words(),
+//         price: faker.random.number({ min: 100, max: 5000 }),
+//         description: faker.lorem.sentence()
+//     };
+// };
 
 const getAllCameras = async (req, res) => {
     try {
@@ -106,6 +108,6 @@ module.exports = {
     getCameraById,
     createCamera,
     updateCamera,
-    deleteCamera,
-    generateNewEntity // Exporta functia de generare a entitatilor noi
+    deleteCamera
+    //generateNewEntity // Exporta functia de generare a entitatilor noi
 };
