@@ -41,6 +41,24 @@
       "name": "blue Analyst",
       "price": 2456,
       "description": "Excepturi beatae dolor dolores ullam."
+    },
+    {
+      "id": "bec93699-6024-43b8-93b0-6c1ee18e6ae2",
+      "name": "digital Synergistic",
+      "price": 1313,
+      "description": "Fugiat ut quae."
+    },
+    {
+      "id": "2be2b3d0-2a8e-4d67-9956-252168dd0355",
+      "name": "Avon",
+      "price": 2013,
+      "description": "Aperiam sunt voluptates et aut totam reprehenderit molestias."
+    },
+    {
+      "id": "f35fefa7-1941-4fa3-9eaf-3b6bbb281683",
+      "name": "Decentralized",
+      "price": 1409,
+      "description": "Repellendus nihil et ut quod repellat inventore debitis sint dolores."
     }
   ],
   "reviews": [
@@ -68,6 +86,16 @@
       "id": "5822d9a0-b97e-4bcf-8ae5-b3ef094adb3a",
       "cameraId": "1",
       "text": "aaaa"
+    },
+    {
+      "id": "e214d496-b7f9-4ae4-956f-42a98f7609c2",
+      "cameraId": "1",
+      "text": "manea robert"
+    },
+    {
+      "id": "971e94ff-20d8-4035-be3e-27ace8d0e27b",
+      "cameraId": "1",
+      "text": "galati"
     }
   ]
 }
