@@ -38,16 +38,20 @@ const getReviewsByCameraId = async (req, res) => {
 
 const createReview = async (req, res) => {
     const { cameraId, text } = req.body;
-    if (!cameraId || !text) {
-        return res.status(400).json({ error: 'Camera ID and text are required' });
+    console.log(req.body);
+    if (!cameraId) {
+        return res.status(400).json({ error: 'Camera ID and text are required\n' });
     }
     try {
-        const id = uuidv4();
-        const review = await Review.create({ id, cameraId, text });
+        const review = await Review.create({ 
+            reviewId: uuidv4(),
+            cameraId : cameraId,
+            reviewText : text
+        });
         res.status(201).json(review);
     } catch (error) {
         console.error('Error creating review:', error);
-        res.status(500).json({ error: 'Failed to create review' });
+        res.status(500).json({ error: 'Failed to create review\n' });
     }
 };
 

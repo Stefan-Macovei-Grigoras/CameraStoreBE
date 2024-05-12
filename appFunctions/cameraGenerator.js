@@ -1,25 +1,38 @@
-const axios = require('axios');
+const { v4: uuidv4 } = require('uuid');
+const faker = require('faker');
+const Camera = require('../model/Camera');
+
+const intervalSeconds = 60000;
+
 const generateNewCamera = () => {
     return {
-        id: uuidv4(), 
-        name: faker.random.words(),
-        price: faker.random.number({ min: 100, max: 5000 }),
-        description: faker.lorem.sentence()
+        cameraId: uuidv4(), 
+        cameraName: faker.random.words(),
+        cameraPrice: faker.random.number({ min: 100, max: 5000 }),
+        cameraDescription: faker.lorem.sentence()
     };
 };
 
-const intervalSeconds = 6000;
+const createCamera = async (cameraData) => {
+    try {
+        // Assuming Camera model is already imported
+        const camera = await Camera.create(cameraData);
+        return camera;
+    } catch (error) {
+        console.error('Error creating camera:', error);
+        throw new Error('Failed to create camera');
+    }
+};
 
-function addNewCameraPeriodically(PORT) {
-    setInterval(() => {
-        const Camera = generateNewCamera();
-        axios.post(`http://localhost:${PORT}/cameras`, Camera)
-            .then(response => {
-                console.log('New entity added:', response.data);
-            })
-            .catch(error => {
-                console.error('Error adding new entity:', error);
-            });
+function addNewCameraPeriodically() {
+    setInterval(async () => {
+        const camera = generateNewCamera();
+        try {
+            const createdCamera = await createCamera(camera);
+            console.log('New camera created:', createdCamera);
+        } catch (error) {
+            console.error('Error adding new camera:', error);
+        }
     }, intervalSeconds * 1000);
 }
 

@@ -1,25 +1,47 @@
 // controllers/cameraController.js
 
-const axios = require('axios');
+
 const { v4: uuidv4 } = require('uuid'); 
-const faker = require('faker'); 
-const data = require('../data.json');
 const Camera = require('../model/Camera');
-const sequelize = require('../appFunctions/Connection');
+const Review = require('../model/Review'); 
+const jwt = require('jsonwebtoken');
+// const secretKey = process.env.REACT_APP_SECRET_TOKEN_KEY;
+const secretKey = "UBB"
 
 const getAllCameras = async (req, res) => {
+    const authHeader = req.headers.authorization; // Retrieve the token from the request headers
+    if (!authHeader) {
+        return res.status(401).json({ error: 'Unauthorized: Token missing' });
+    }
+    const token = authHeader.split(' ')[1];
     try {
+        const decoded = jwt.verify(token, secretKey);
         const cameras = await Camera.findAll();
         res.json(cameras);
     } catch (error) {
         console.error('Error fetching cameras:', error);
-        res.status(500).json({ error: 'Failed to fetch cameras' });
+        if (error.name === 'JsonWebTokenError') {
+            res.status(401).json({ error: 'Unauthorized: Invalid token' });
+        } else {
+            res.status(500).json({ error: 'Failed to fetch cameras' });
+        }
     }
 };
 
 const getCameraById = async (req, res) => {
     const id = req.params.id;
+    const authHeader = req.headers.authorization; // Retrieve the token from the request headers
+
+    // Check if the token is present in the request headers
+    if (!authHeader) {
+        return res.status(401).json({ error: 'Unauthorized: Token missing' });
+    }
+    const token = authHeader.split(' ')[1];
     try {
+        // Verify and decode the token
+        console.log(token.decoded);
+        const decoded = jwt.verify(token, secretKey);
+        //const userId = decoded.userId;
         const camera = await Camera.findByPk(id);
         if (camera) {
             res.json(camera);
@@ -28,13 +50,23 @@ const getCameraById = async (req, res) => {
         }
     } catch (error) {
         console.error('Error fetching camera by ID:', error);
-        res.status(500).json({ error: 'Failed to fetch camera' });
+        if (error.name === 'JsonWebTokenError') {
+            res.status(401).json({ error: 'Unauthorized: Invalid token' });
+        } else {
+            res.status(500).json({ error: 'Failed to fetch camera' });
+        }
     }
 };
 
 const createCamera = async (req, res) => {
+    const authHeader = req.headers.authorization; // Retrieve the token from the request headers
+    if (!authHeader) {
+        return res.status(401).json({ error: 'Unauthorized: Token missing' });
+    }
+    const token = authHeader.split(' ')[1];
     const { name, price, description } = req.body;
     try {
+        const decoded = jwt.verify(token, secretKey);
         const camera = await Camera.create({
             cameraId: uuidv4(),
             cameraName: name,
@@ -44,14 +76,26 @@ const createCamera = async (req, res) => {
         res.status(201).json(camera);
     } catch (error) {
         console.error('Error creating camera:', error);
-        res.status(500).json({ error: 'Failed to create camera' });
+        if (error.name === 'JsonWebTokenError') {
+            res.status(401).json({ error: 'Unauthorized: Invalid token' });
+        } else {
+            res.status(500).json({ error: 'Failed to create camera' });
+        }
     }
 };
 
 const updateCamera = async (req, res) => {
     const id = req.params.id;
+    const authHeader = req.headers.authorization; // Retrieve the token from the request headers
+
+    // Check if the token is present in the request headers
+    if (!authHeader) {
+        return res.status(401).json({ error: 'Unauthorized: Token missing' });
+    }
+    const token = authHeader.split(' ')[1];
     const { name, price, description } = req.body;
     try {
+        const decoded = jwt.verify(token, secretKey);
         const camera = await Camera.findByPk(id);
         if (camera) {
             await camera.update({
@@ -65,13 +109,29 @@ const updateCamera = async (req, res) => {
         }
     } catch (error) {
         console.error('Error updating camera:', error);
-        res.status(500).json({ error: 'Failed to update camera' });
+        if (error.name === 'JsonWebTokenError') {
+            res.status(401).json({ error: 'Unauthorized: Invalid token' });
+        } else {
+            res.status(500).json({ error: 'Failed to update camera' });
+        }
     }
 };
 
 const deleteCamera = async (req, res) => {
     const id = req.params.id;
+    const authHeader = req.headers.authorization; // Retrieve the token from the request headers
+
+    // Check if the token is present in the request headers
+    if (!authHeader) {
+        return res.status(401).json({ error: 'Unauthorized: Token missing' });
+    }
+    const token = authHeader.split(' ')[1];
     try {
+        const decoded = jwt.verify(token, secretKey);
+        // First, find and delete all reviews associated with the camera
+        await Review.destroy({ where: { cameraId: id } });
+
+        // Then, delete the camera itself
         const camera = await Camera.findByPk(id);
         if (camera) {
             await camera.destroy();
@@ -81,7 +141,11 @@ const deleteCamera = async (req, res) => {
         }
     } catch (error) {
         console.error('Error deleting camera:', error);
-        res.status(500).json({ error: 'Failed to delete camera' });
+        if (error.name === 'JsonWebTokenError') {
+            res.status(401).json({ error: 'Unauthorized: Invalid token' });
+        } else {
+            res.status(500).json({ error: 'Failed to delete camera' });
+        }
     }
 };
 
